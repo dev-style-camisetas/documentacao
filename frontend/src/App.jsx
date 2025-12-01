@@ -47,9 +47,19 @@ export default function App() {
     return (
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
-            Loja de Camisetas Personalizadas
-          </Typography>
+          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+            <Box component={Link} to="/" sx={{ display: 'inline-flex', alignItems: 'center', textDecoration: 'none' }}>
+              <Box
+                component="img"
+                src="/logo1.png"
+                alt="myoffice lab"
+                sx={{ height: 40, width: 'auto', display: { xs: 'none', sm: 'inline-block' }, mr: 1 }}
+              />
+              <Typography variant="h6" sx={{ fontWeight: 700, display: { xs: 'inline-block', sm: 'none' } }}>
+                Loja
+              </Typography>
+            </Box>
+          </Box>
           <Button color="inherit" component={Link} to="/">Início</Button>
           <Button color="inherit" component={Link} to="/personalizar">Personalizar</Button>
           <Button color="inherit" component={Link} to="/templates">Templates</Button>
@@ -117,10 +127,6 @@ export default function App() {
                   </Box>
                 </Box>
                 <Divider />
-                <MenuItem onClick={() => { setAnchorEl(null); navigate('/acompanhar'); }}>
-                  <ListItemIcon><ReceiptLongIcon fontSize="small" /></ListItemIcon>
-                  Meus pedidos
-                </MenuItem>
                 <MenuItem onClick={() => { setAnchorEl(null); navigate('/templates'); }}>
                   <ListItemIcon><Inventory2Icon fontSize="small" /></ListItemIcon>
                   Meus templates
