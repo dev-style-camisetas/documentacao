@@ -12,7 +12,6 @@ import Home from './pages/Home';
 import Personalizar from './pages/Personalizar';
 import Acompanhar from './pages/Acompanhar';
 import Templates from './pages/Templates';
-import ProdutosMaisPedidos from './pages/ProdutosMaisPedidos';
 import ProductDetails from './pages/ProductDetails';
 import Profile from './pages/Profile';
 import { PedidoProvider } from './contexts/PedidoContext';
@@ -64,7 +63,6 @@ export default function App() {
           <Button color="inherit" component={Link} to="/">Início</Button>
           <Button color="inherit" component={Link} to="/personalizar">Personalizar</Button>
           <Button color="inherit" component={Link} to="/templates">Templates</Button>
-          <Button color="inherit" component={Link} to="/mais-pedidos">Mais pedidos</Button>
           <Button color="inherit" component={Link} to="/acompanhar">Pedidos</Button>
           {isAuthenticated && (
             <>
@@ -129,10 +127,6 @@ export default function App() {
                   </Box>
                 </Box>
                 <Divider />
-                <MenuItem onClick={() => { setAnchorEl(null); navigate('/acompanhar'); }}>
-                  <ListItemIcon><ReceiptLongIcon fontSize="small" /></ListItemIcon>
-                  Meus pedidos
-                </MenuItem>
                 <MenuItem onClick={() => { setAnchorEl(null); navigate('/templates'); }}>
                   <ListItemIcon><Inventory2Icon fontSize="small" /></ListItemIcon>
                   Meus templates
@@ -173,7 +167,6 @@ export default function App() {
               <Route path="/" element={<Home />} />
               <Route path="/personalizar" element={<Personalizar />} />
               <Route path="/templates" element={<Templates />} />
-              <Route path="/mais-pedidos" element={<ProdutosMaisPedidos />} />
               <Route path="/produtos/:id" element={<ProductDetails />} />
               <Route path="/acompanhar" element={<Acompanhar />} />
               <Route path="/profile" element={<Profile />} />
